@@ -1,65 +1,111 @@
-# FlashBuy — Auto-Login Source (Public)
+# ⚡ FlashBuy — Fast Checkout voor iBood
 
-This repository contains the **publicly auditable source code** of the
-`autologin.js` script used by the FlashBuy Chrome extension, plus the
-extension package itself.
+**FlashBuy is een browser-extensie die je checkout op iBood.com versnelt
+tot enkele seconden.** Tijdens de iBood Hunt zijn deals soms binnen
+seconden uitverkocht. FlashBuy zorgt ervoor dat jij niet de deal verliest
+omdat je te traag was met afrekenen.
 
-## Why is the auto-login script public?
+## Wat doet FlashBuy?
 
-FlashBuy stores your iBood email and password locally to enable auto-login.
-Because that's a sensitive feature, we want users to be able to verify
-exactly what the script does with their credentials.
+Zodra **jij** op "Kopen" klikt bij een deal, neemt FlashBuy het over:
 
-## What this script does
+1. Selecteert automatisch **thuislevering**
+2. Klikt **PayPal** aan als betaalmethode
+3. Klikt op **"Bestellen en betalen"**
+4. Stuurt je door naar PayPal om af te ronden
 
-1. Reads `fb_email`, `fb_pass` and `fb_autologin` from `chrome.storage.sync`
-   (your local browser storage)
-2. Detects the iBood login form on the page
-3. Fills the email and password fields and clicks "Ga verder"
+Wat handmatig 15-30 seconden duurt, doet FlashBuy in 2-4 seconden.
 
-## What this script does NOT do
+**Belangrijk:** FlashBuy is **geen bot**. Het klikt niet automatisch op
+deals — dat doe jij zelf. FlashBuy versnelt alleen het afrekenproces
+nadat jij hebt besloten te kopen.
 
-- **No network requests** to FlashBuy servers
-- No `fetch()` or `XMLHttpRequest` anywhere
-- No sending of credentials to third parties
-- No analytics, tracking, or telemetry
+## Installatie
 
-The password is **only** entered into the iBood login form on ibood.com —
-the same place you would type it yourself.
+1. Download **`Flashbuy v3.1.0.zip`** uit deze repository
+2. Pak het bestand uit
+3. Open Chrome (of Edge, Brave, Opera, Vivaldi) en ga naar
+   `chrome://extensions/`
+4. Zet rechtsboven **"Ontwikkelaarsmodus"** aan
+5. Klik **"Uitgepakte extensie laden"** en selecteer de uitgepakte map
+6. Klaar! Het FlashBuy-icoon verschijnt in je browserbalk
 
-## Repository contents
+Volledige instructies en activatie-stappen staan in de bijgeleverde
+**`FlashBuy_Handleiding.pdf`**.
 
-- `autologin.js` — the unobfuscated source of the auto-login script
-- `Flashbuy v3.1.0.zip` — the full FlashBuy extension package for installation
+## Werkt op
 
-## Verifying authenticity
+- Google Chrome
+- Microsoft Edge
+- Brave
+- Opera
+- Vivaldi
 
-To verify your installed extension matches the public source:
-1. Locate the extension's `src/autologin.js` file (inside Flashbuy v3.1.0.zip)
-2. Compare its content with `autologin.js` in this repository
-3. They should be identical
+Werkt op zowel de Belgische (`/s-be/`) als Nederlandse (`/s-nl/`)
+versie van iBood.
 
-## Other extension files
+---
 
-The rest of the FlashBuy extension (checkout automation, license logic,
-selector data) is **obfuscated** to protect the commercial value of the
-checkout optimization.
+# 🔒 Auto-Login Source (Public)
 
-Only this file handles your credentials, so only this file needs to be
-publicly verifiable.
+FlashBuy biedt een optionele auto-login functie. Daarvoor sla je je
+iBood e-mail en wachtwoord op in de extensie. Omdat dit een gevoelige
+feature is, is de broncode van de auto-login functie **volledig publiek
+inzichtelijk** in deze repository.
 
-## Installation
+Je kan zelf controleren wat het script met je wachtwoord doet.
 
-Download `Flashbuy v3.1.0.zip` and follow the installation instructions
-in the included PDF manual (`FlashBuy_Handleiding.pdf`).
+## Wat dit script doet
 
-## License
+1. Leest `fb_email`, `fb_pass` en `fb_autologin` uit `chrome.storage.sync`
+   (= lokale browser-opslag op jouw eigen apparaat)
+2. Detecteert het iBood inlog-formulier op de pagina
+3. Vult de e-mail en wachtwoord velden in en klikt op "Ga verder"
 
-Source provided for **transparency and verification purposes only**.
-Not licensed for redistribution or commercial use.
+## Wat dit script NIET doet
+
+- **Geen netwerk-requests** naar FlashBuy servers
+- Geen `fetch()` of `XMLHttpRequest` waar dan ook
+- Geen versturen van credentials naar derden
+- Geen analytics, tracking, of telemetrie
+
+Het wachtwoord wordt **uitsluitend** in het iBood inlog-formulier op
+ibood.com gezet — dezelfde plek waar jij het anders zelf typt.
+
+## Authenticiteit verifieren
+
+Om te controleren dat je geinstalleerde extensie overeenkomt met
+deze publieke broncode:
+
+1. Open de extensie-bestanden uit `Flashbuy v3.1.0.zip`
+2. Open `src/autologin.js`
+3. Vergelijk de inhoud met `autologin.js` in deze repository
+4. Ze moeten identiek zijn
+
+## Waarom is de rest van de extensie obfuscated?
+
+De rest van FlashBuy (checkout automatisering, license-systeem,
+selector-data) is obfuscated om de commerciele waarde van de
+checkout-optimalisatie te beschermen.
+
+Alleen het auto-login script werkt met je inloggegevens, dus alleen
+dat script hoeft publiek verifieerbaar te zijn.
+
+---
+
+## Repository inhoud
+
+- **`Flashbuy v3.1.0.zip`** — Volledige FlashBuy extensie + PDF handleiding
+- **`autologin.js`** — Publieke broncode van het auto-login script
+- **`README.md`** — Dit bestand
+
+## Licentie
+
+Source ter beschikking gesteld voor **transparantie en verificatie**.
+Niet gelicentieerd voor herdistributie of commercieel gebruik.
 
 ## Contact
 
-- Email: Flashbuy.novadevlabs@gmail.com
-- X: https://x.com/Flashbuy2026
-- GitHub: https://github.com/Flashbuy2026/Flashbuy
+- **E-mail:** Flashbuy.novadevlabs@gmail.com
+- **X (Twitter):** https://x.com/Flashbuy2026
+- **GitHub:** https://github.com/Flashbuy2026/Flashbuy
