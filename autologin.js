@@ -49,11 +49,12 @@
 
   // Laad credentials één keer bij start
   function _loadCreds(callback) {
-    chrome.storage.sync.get(["fb_email", "fb_pass", "fb_autologin"], function(d) {
+    chrome.storage.sync.get(["fb_email", "fb_pass", "fb_autologin", "fb_paused"], function(d) {
       _credsCache = {
         email: d.fb_email || null,
         pass: d.fb_pass || null,
-        autologin: !!d.fb_autologin
+        autologin: !!d.fb_autologin,
+        paused: !!d.fb_paused
       };
       if (callback) callback();
     });
@@ -62,7 +63,7 @@
   // Luister naar storage wijzigingen (gebruiker kan credentials updaten)
   chrome.storage.onChanged.addListener(function(changes, area) {
     if (area !== "sync") return;
-    if (changes.fb_email || changes.fb_pass || changes.fb_autologin) {
+    if (changes.fb_email || changes.fb_pass || changes.fb_autologin || changes.fb_paused) {
       _loadCreds();
       _l("Credentials cache geupdate");
     }
@@ -172,6 +173,7 @@
     // Snelle checks zonder storage calls
     if (_filling) return;
     if (!_credsCache) return;
+    if (_credsCache.paused) return;
     if (!_credsCache.autologin || !_credsCache.email || !_credsCache.pass) return;
 
     var inputs = _findLoginInputs();

@@ -22,7 +22,7 @@ nadat jij hebt besloten te kopen.
 
 ## Installatie
 
-1. Download **`Flashbuy v3.1.0.zip`** uit deze repository
+1. Download **`Flashbuy v3.1.1.zip`** uit deze repository
 2. Pak het bestand uit
 3. Open Chrome (of Edge, Brave, Opera, Vivaldi) en ga naar
    `chrome://extensions/`
@@ -77,7 +77,7 @@ ibood.com gezet — dezelfde plek waar jij het anders zelf typt.
 Om te controleren dat je geinstalleerde extensie overeenkomt met
 deze publieke broncode:
 
-1. Open de extensie-bestanden uit `Flashbuy v3.1.0.zip`
+1. Open de extensie-bestanden uit `Flashbuy v3.1.1.zip`
 2. Open `src/autologin.js`
 3. Vergelijk de inhoud met `autologin.js` in deze repository
 4. Ze moeten identiek zijn
@@ -95,7 +95,7 @@ dat script hoeft publiek verifieerbaar te zijn.
 
 ## Repository inhoud
 
-- **`Flashbuy v3.1.0.zip`** — Volledige FlashBuy extensie + PDF handleiding
+- **`Flashbuy v3.1.1.zip`** — Volledige FlashBuy extensie + PDF handleiding
 - **`autologin.js`** — Publieke broncode van het auto-login script
 - **`README.md`** — Dit bestand
 
