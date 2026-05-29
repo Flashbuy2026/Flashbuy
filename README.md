@@ -10,6 +10,16 @@
 4. Klikt **"Bestellen en betalen!"**
 5. Je wordt doorgestuurd naar PayPal
 
+## ⚡ Box Mode (nieuw in v4)
+
+Box Mode koopt automatisch zonder dat je zelf hoeft te klikken:
+
+1. FlashBuy pollt de iBood API elke 2 seconden
+2. In de laatste 8 seconden voor een deal-wissel: 200ms polling
+3. Zodra een nieuw deal-item beschikbaar is (vóór de pagina het toont): automatisch kopen
+4. Stel een **slug/titel filter** in (bijv. `de-box`) zodat alleen specifieke producten gekocht worden
+5. Auto-checkout voltooit de aankoop volledig automatisch
+
 ## Pauze-knop
 
 Wil je normaal winkelen? Gebruik de schakelaar in het paneel:
@@ -18,10 +28,10 @@ Wil je normaal winkelen? Gebruik de schakelaar in het paneel:
 
 ## Installatie
 
-1. Download **`Flashbuy v3.1.2.zip`**
+1. Download **`Flashbuy v4.2.6.zip`**
 2. Pak uit en open `chrome://extensions/`
 3. Zet **"Ontwikkelaarsmodus"** aan
-4. Klik **"Uitgepakte extensie laden"** → selecteer de map
+4. Klik **"Uitgepakte extensie laden"** → selecteer de map `Flashbuy v4.2.6`
 5. Klaar!
 
 Werkt op Chrome, Edge, Brave, Opera, Vivaldi — BE en NL versie van iBood.
